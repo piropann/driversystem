@@ -45,7 +45,7 @@ Raspberry Pi 4 Model B 4GBを使って、LEDの点滅を行うデバイスドラ
   
 ### LED消灯
 ```bash
-  echo  > /dev/myled0
+  echo 1 > /dev/myled0
   ```
   
 ### プログラム終了
