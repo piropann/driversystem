@@ -2,7 +2,7 @@
 2020 RobotSystem Task1
 
 ## 概要
-Raspberry Pi 4 Model B 4GBを使って、LEDの点滅を行った。
+Raspberry Pi 4 Model B 4GBを使って、LEDの点滅を行うデバイスドライバの作成を行った。
 
 ## 構成
 
@@ -37,12 +37,17 @@ Raspberry Pi 4 Model B 4GBを使って、LEDの点滅を行った。
   sudo chmod 666 /dev/myled0
   ```
   
-## LED点滅
+### LED点滅
 ```bash
   echo 0 > /dev/myled0
   ```
   
-## LED消灯
+### LED消灯
 ```bash
   echo  > /dev/myled0
+  ```
+  
+### プログラム終了
+```bash
+  sudo rmmod myled
   ```
