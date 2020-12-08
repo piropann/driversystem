@@ -51,3 +51,7 @@ Raspberry Pi 4 Model B 4GBを使って、LEDの点滅を行うデバイスドラ
 ```bash
   sudo rmmod myled
   ```
+
+## LICENSE
+
+GNU General Public License v3.0
