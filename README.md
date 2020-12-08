@@ -21,3 +21,28 @@ Raspberry Pi 4 Model B 4GBを使って、LEDの点滅を行った。
 ### 動画
 画像をクリックしていただけると動画(YouTube)に飛びます。
 [![](http://img.youtube.com/vi/CQbDgr0piRI/0.jpg)](http://www.youtube.com/watch?v=CQbDgr0piRI "")
+
+## 実装方法
+
+```bash
+  git clone https://github.com/piropann/driversystem.git
+  cd driversystem
+  make
+  ```
+  
+## プログラム起動方法
+
+```bash
+  sudo insmod myled.ko
+  sudo chmod 666 /dev/myled0
+  ```
+  
+## LED点滅
+```bash
+  echo 0 > /dev/myled0
+  ```
+  
+## LED消灯
+```bash
+  echo  > /dev/myled0
+  ```
