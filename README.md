@@ -16,3 +16,5 @@ Raspberry Pi 4 Model B 4GBを使って、LEDの点滅を行った。
 |ジャンパー線(オスメス)|4|
 
 ### 回路図
+![image](https://user-images.githubusercontent.com/55969921/101446713-2039b680-3967-11eb-95f4-cbf24a51b713.png)
+
