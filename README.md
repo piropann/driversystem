@@ -19,4 +19,5 @@ Raspberry Pi 4 Model B 4GBを使って、LEDの点滅を行った。
 ![image](https://user-images.githubusercontent.com/55969921/101446713-2039b680-3967-11eb-95f4-cbf24a51b713.png)
 
 ### 動画
+画像をクリックしていただけると動画(YouTube)に飛びます。
 [![](http://img.youtube.com/vi/CQbDgr0piRI/0.jpg)](http://www.youtube.com/watch?v=CQbDgr0piRI "")
