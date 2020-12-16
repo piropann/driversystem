@@ -22,12 +22,12 @@ static unsigned int led[2] = {led0 , led1};
 
 static ssize_t led_write(struct file* filp, const char* buf, size_t count, loff_t* pos)
 {
-	char c;   
-    int i;
-	if(copy_from_user(&c,buf,sizeof(char)))
-		return -EFAULT;
+　　char c;   
+　　int i;
+　　if(copy_from_user(&c,buf,sizeof(char)))
+	return -EFAULT;
 
-	if(c == '0'){
+　　if(c == '0'){
         for(i =1; i<=5; i++){
             gpio_base[10] = 1 << led0;
             gpio_base[7] = 1 << led1;
@@ -59,17 +59,17 @@ static int __init init_mod(void)
 	}
 	printk(KERN_INFO "%s is loaded. major:%d\n", __FILE__, MAJOR(dev));
 	cdev_init(&cdv, &led_fops);
-    retval = cdev_add(&cdv, dev, 1);
-    if(retval < 0){
+        retval = cdev_add(&cdv, dev, 1);
+        if(retval < 0){
             printk(KERN_ERR "cdev_add failed. major:%d, minor:%d",MAJOR(dev),MINOR(dev));
             return retval;
 	}
 
 	cls = class_create(THIS_MODULE,"myled");  
-    if(IS_ERR(cls)){
+         if(IS_ERR(cls)){
             printk(KERN_ERR "class_create failed.");
             return PTR_ERR(cls);
-    }
+        }
 	device_create(cls, NULL, dev, NULL, "myled%d",MINOR(dev));
 
 	gpio_base = ioremap_nocache(0xfe200000, 0xA0);
@@ -77,12 +77,12 @@ static int __init init_mod(void)
     //const u32 led0 = 25;
     //const u32 led1 = 24;
 	//int led[1] = {led0, led1};
-    for(l=0; l<2; l++){
-        const u32 index = led[l]/10;
-        const u32 shift = (led[l]%10)*3;//15bit
-        const u32 mask = ~(0x7 << shift);//11111111111111000111111111111111
-        gpio_base[index] = (gpio_base[index] & mask) | (0x1 << shift);
-    }
+        for(l=0; l<2; l++){
+            const u32 index = led[l]/10;
+            const u32 shift = (led[l]%10)*3;//15bit
+            const u32 mask = ~(0x7 << shift);//11111111111111000111111111111111
+            gpio_base[index] = (gpio_base[index] & mask) | (0x1 << shift);
+        }
 	return 0;
 }
 
